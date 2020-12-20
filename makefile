@@ -2,9 +2,9 @@
 
 
 # Useful exported target
-#	- gen_proto 			Compile all protos and generate the corresponding code. 
-#	- fmt | format 			Format all code
-#   - clean					Clean all generated code
+#   - gen_proto             Compile all protos and generate the corresponding code. 
+#   - fmt | format          Format all code
+#   - clean                 Clean all generated code
 
 
 
