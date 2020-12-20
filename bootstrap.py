@@ -22,6 +22,7 @@ OVER_FLOW = 1 << 13
 # Const varibles
 DIR = pathlib.Path(__file__).parent.absolute()
 MAKEFILE = pathlib.Path.joinpath(DIR, "makefile")
+PROTO_FS_CMD = f'fswatch -n -x -r -l 1 {DIR}/proto'
 
 # Argument parser defination
 parser = argparse.ArgumentParser(
@@ -150,7 +151,7 @@ async def main():
         Log.info('* Proto watcher disabled')
     else:
         Log.info('* Start proto watcher')
-        task.append( asyncio.create_task(add_proto_watcher('fswatch -n -x -r -l 1 proto')) )
+        task.append( asyncio.create_task(add_proto_watcher(PROTO_FS_CMD)) )
     if len(task) > 0:
         await asyncio.wait(task)
     Log.info('Bootstrap program done')
