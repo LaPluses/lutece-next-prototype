@@ -2,9 +2,9 @@ syntax = "proto3";
 
 import "api/data.proto";
 
-option go_package = "proto/api/service";
+option go_package = "github.com/LaPluses/lutece-next-prototype/proto/api";
 
-service WebService {
+service Web {
   rpc GetUser(GetUserRequest) returns (GetUserResponse) {
   }
 }

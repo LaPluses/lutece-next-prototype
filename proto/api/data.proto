@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "proto/api/data";
+option go_package = "github.com/LaPluses/lutece-next-prototype/proto/api";
 
 message User {
   enum Role {
