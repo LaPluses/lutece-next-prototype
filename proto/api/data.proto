@@ -3,6 +3,15 @@ syntax = "proto3";
 option go_package = "proto/api/data";
 
 message User {
-    string name = 1;
-    string icon_url = 2;
+  enum Role {
+    UNKNOWN = 0;
+    ANNOYMOUS = 1;
+    NORMAL = 2;
+    MANAGER = 3;
+    ROOT = 4;
+  }
+
+  Role role = 1;
+  string name = 2;
+  string icon_url = 3;
 }

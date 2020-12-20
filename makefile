@@ -1,3 +1,13 @@
+# Project level Build rule defined here.
+
+
+# Useful exported target
+#	- gen_proto 			Compile all protos and generate the corresponding code. 
+#	- fmt | format 			Format all code
+#   - clean					Clean all generated code
+
+
+
 # Root directory
 DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
@@ -24,3 +34,17 @@ clean_proto:
 
 # Clean all
 clean: clean_proto
+
+# Format go source files
+fmt_go:
+	@ gofmt -w -s $(DIR)/web
+
+# Format proto source files
+fmt_proto:
+	@ clang-format -style='Google' -i $(API_PROTOS)
+
+# Format all
+format: fmt_go fmt_proto
+
+# Alias of format
+fmt: format

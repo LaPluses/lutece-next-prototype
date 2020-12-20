@@ -1,11 +1,17 @@
 syntax = "proto3";
 
+import "api/data.proto";
+
 option go_package = "proto/api/service";
 
 service WebService {
-  rpc Hello(HelloRequest) returns (HelloResponse) {}
+  rpc GetUser(GetUserRequest) returns (GetUserResponse) {
+  }
 }
 
-message HelloRequest {}
+message GetUserRequest {
+}
 
-message HelloResponse { string message = 1; }
+message GetUserResponse {
+  User user = 1;
+}
