@@ -26,7 +26,8 @@ PROTO_FS_CMD = f'fswatch -n -x -r -l 1 {DIR}/proto'
 
 # Argument parser defination
 parser = argparse.ArgumentParser(
-    description="Lutece next bootstrap programme", allow_abbrev=False
+    description="Lutece next bootstrap programme", 
+    allow_abbrev=False,
 )
 
 parser.add_argument(
