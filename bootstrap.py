@@ -150,7 +150,7 @@ async def main():
         Log.info('* Proto watcher disabled')
     else:
         Log.info('* Start proto watcher')
-        task.append( asyncio.create_task(add_proto_watcher('fswatch -n -x -l 1 proto/api')) )
+        task.append( asyncio.create_task(add_proto_watcher('fswatch -n -x -r -l 1 proto')) )
     if len(task) > 0:
         await asyncio.wait(task)
     Log.info('Bootstrap program done')
