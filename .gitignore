@@ -16,3 +16,6 @@
 
 # Proto generated files
 web/proto/
+
+# Web generated dist folder
+web/dist/
